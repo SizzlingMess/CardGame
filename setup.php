@@ -1,0 +1,17 @@
+<?php
+include "connection.php"
+
+$sql = "CREATE TABLE IF NOT EXISTS card.cards(
+cardID INTEGER,
+name VARCHAR(255),
+hp VARCHAR(255),
+score VARCHAR(255),
+content VARCHAR(255),
+image VARCHAR(255),
+skillTitle VARCHAR(255),
+color VARCHAR(255)
+);
+";
+
+$conn->query($sql);
+?>
