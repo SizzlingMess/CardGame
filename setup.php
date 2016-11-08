@@ -13,5 +13,11 @@ color VARCHAR(255)
 );
 ";
 
-$conn->query($sql);
+if($conn->query($sql)){
+echo "success";
+} else {
+echo $conn->error;
+}
+
+$conn->close();
 ?>
