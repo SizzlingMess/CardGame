@@ -1,7 +1,7 @@
 <?php
-include "connection.php"
+include "connection.php";
 
-$sql = "CREATE TABLE IF NOT EXISTS card.cards(
+$sql = "CREATE TABLE IF NOT EXISTS cards(
 cardID INTEGER,
 name VARCHAR(255),
 hp VARCHAR(255),
