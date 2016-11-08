@@ -1,0 +1,68 @@
+/*.class*/
+html {
+    font-family: sans-serif;
+}
+
+.card {
+    background-color: blueviolet;
+    width: 20em;
+    height: 34em;
+    margin: 1em;
+    float: left;
+    padding: 10px;
+}
+
+.card .newcard {
+
+}
+input, textarea {
+    clear:both;
+}
+
+.header {
+
+}
+
+.name {
+    font-weight: bold;
+    text-decoration: underline;
+    float: left;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+
+.color {
+
+}
+
+.scores {
+}
+
+.level {
+float: left;
+}
+
+.hp {
+float: right;
+}
+
+img {
+width: 18em;
+margin-left: 1em;
+}
+
+.bio {
+}
+
+.bio  h1{
+font-size: 12pt;
+}
+
+.card h2 {
+    font-size: 12px;
+}
