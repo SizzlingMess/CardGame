@@ -53,6 +53,6 @@ Enter your project root directory
 
 Or navigate to it in your browser if you already have apache set up. WAMP, XAMP (and MAMP if you're using mac) are really handy if you're testing this out.
 
-
-
-You are welcome submit your own changes with a Pull request :)
+#Fork Me!
+To submit some of your own changes
+Make a fork and then submit a pull request for review. I'll likely approve it :)
