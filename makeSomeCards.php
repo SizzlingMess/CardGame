@@ -1,21 +1,24 @@
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <?php
 include 'connection.php';
 include 'Card.php';
+?>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<?php
 
-$sql = "SELECT * FROM card";
+$sql = "SELECT * FROM cards";
 $result = [];
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result->num_rows != null ) {
     while ($row = $result->fetch_assoc()) {
 
         $cardID = $row["cardID"];
         $image = $row["image"];
         $name = $row["name"];
-        $level = $row["level"];
+        $level = $row["score"];
         $hp = $row["hp"];
         $skillTitle = $row["skillTitle"];
         $content = $row["content"];
@@ -30,7 +33,9 @@ if ($result->num_rows > 0) {
             $content,
             $color);
         print $card->printCard();
-    }
+    }//end the loop
+
+}//end the if
 
     ?>
     <div class="card newcard">
@@ -54,9 +59,6 @@ if ($result->num_rows > 0) {
     </div>
     <?php
 
-    print $sql;
-
-
     if (isset($_GET["name"]) && $_GET["name"] != "") {
         $card2 = new Card(
             urldecode($_GET["image"]),
@@ -69,6 +71,6 @@ if ($result->num_rows > 0) {
         );
         $card2->Save();
     }
-
-
-}
+?>
+</body>
+</html>

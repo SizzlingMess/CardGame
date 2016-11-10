@@ -61,41 +61,19 @@ HTML;
      */
     public function Save()
     {
-
             
-$sql = <<<SQL
-INSERT INTO card (`image`,`name`,`level`,`hp`,`content`,`color`, `skillTitle`)
-VALUES ('{$this->image}','{$this->name}','{$this->level}','{$this->hp}','{$this->content}','{$this->color}', '')
+        $sql = <<<SQL
+        INSERT INTO cards (`image`,`name`,`score`,`hp`,`content`,`color`, `skillTitle`)
+        VALUES ('{$this->image}','{$this->name}','{$this->level}','{$this->hp}','{$this->content}','{$this->color}', '')
 SQL;
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "cards";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        $conn->close();
+        include 'connection.php';
+        if($conn->query("$sql") == false)
+        {
+            print "There was a problem saving to the database<br>" . $conn->error;
+        }
+        else {
+            header("Location: /CardGame/makeSomeCards.php");
+die();
+        }
     }
 }
-
-/*
- *
-<?php
-        include 'connection.php';
-        $sql="SELECT * FROM games";
-        $result=$conn->query($sql);
-
-        if ($result->num_rows>0) {
-            while($row=$result->fetch_assoc()) {
-                echo "<tr>
-                <td>".$row"Name"."</td>
-                <td>".$row"Age"."</td>
-                <td>
-                    <a href='http://store.steampowered.com/search/?term=".$row"Name"."'>Go</a>
-                </td>
-                <td>
-                    <a href='https://www.amazon.co.uk/s/?url=search-alias%3Daps&field-keywords=".$row"Name"."'>Go</a>
-                </td>
-                </tr>";
-            }
-        }
-         ?> */
