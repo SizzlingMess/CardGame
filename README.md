@@ -28,7 +28,8 @@ Clone the repo
 `git clone https://github.com/jamesanderson9182/CardGame.git`
 Make a file called connection.php in the project root
 Paste this in and save it. (This is so that you can have your own database credentials until I get vagrant set up)
-`<?php
+```php
+<?php
 // ToDo: Put your details here Dan
 $servername = "localhost";
 $username = "root";
@@ -45,7 +46,7 @@ if ($conn->connect_error) {
  	echo "Connected Sucessfully";
  }
  */ 
-`
+```
 
 Make a database called cards
 Enter your project root directory 
